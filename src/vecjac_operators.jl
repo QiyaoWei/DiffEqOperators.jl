@@ -101,6 +101,7 @@ function Base.:*(L::VecJacOperator, x::AbstractVector)
             num_vecjac(_u -> L.f(_u, L.p, L.t), L.u, x),
         )
     end
+    println(typeof(L))
     return mul!(similar(vec(L.u)), L, x)
 end
 
