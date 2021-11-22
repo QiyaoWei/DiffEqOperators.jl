@@ -104,6 +104,7 @@ function Base.:*(L::VecJacOperator, x::AbstractVector)
     println(typeof(L))
     println(typeof(L.f))
     println(typeof(_u -> L.f(_u, L.p, L.t)))
+    println("end")
     return mul!(similar(vec(L.u)), L, x)
 end
 
