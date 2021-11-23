@@ -104,7 +104,7 @@ function Base.:*(L::VecJacOperator, x::AbstractVector)
     #println(typeof(L))
     #println(typeof(L.f))
     temp = _u -> L.f(_u)
-    println(temp(x))
+    println(temp(x, L.p))
     println("end")
     return mul!(similar(vec(L.u)), L, x)
 end
